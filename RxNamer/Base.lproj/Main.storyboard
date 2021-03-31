@@ -63,16 +63,27 @@
                                     <constraint firstAttribute="height" constant="250" id="DgW-18-Gyt"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh3-2v-uhv">
+                                <rect key="frame" x="30" y="422" width="354" height="40"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="+ ADD NAME">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xcj-ss-Faj" secondAttribute="trailing" constant="20" id="28H-Qf-2hm"/>
+                            <constraint firstItem="hh3-2v-uhv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="68t-Lo-b1x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hh3-2v-uhv" secondAttribute="trailing" constant="30" id="GSM-Rr-vdz"/>
                             <constraint firstItem="xcj-ss-Faj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="PGe-LK-wx5"/>
                             <constraint firstItem="xcj-ss-Faj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VKR-Og-Ent"/>
+                            <constraint firstItem="hh3-2v-uhv" firstAttribute="top" secondItem="xcj-ss-Faj" secondAttribute="bottom" constant="8" id="aCf-Ff-HNP"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addNameButton" destination="hh3-2v-uhv" id="NE4-au-MiF"/>
                         <outlet property="helloLabel" destination="VJY-XZ-teC" id="fdM-nE-53D"/>
                         <outlet property="nameEntryTextField" destination="Y7W-fH-Ygx" id="he7-TP-A6w"/>
                         <outlet property="namesLabel" destination="Tbd-HU-42G" id="XnX-RH-Fl3"/>
@@ -82,6 +93,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="124"/>
+        </scene>
+        <!--Add NameVC-->
+        <scene sceneID="htE-pD-6Ab">
+            <objects>
+                <viewController storyboardIdentifier="AddNameVC" id="Fa2-Cr-V8e" customClass="AddNameVC" customModule="RxNamer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jae-46-CLr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YRD-iJ-fUB">
+                                <rect key="frame" x="20" y="164" width="374" height="120"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZmP-v8-K6O">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kY-gC-R1o">
+                                        <rect key="frame" x="0.0" y="70" width="374" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="SUBMIT">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="g2Y-hI-Gkg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="clx-Ku-jrR"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="YRD-iJ-fUB" firstAttribute="top" secondItem="clx-Ku-jrR" secondAttribute="top" constant="120" id="5kM-lE-MYd"/>
+                            <constraint firstItem="clx-Ku-jrR" firstAttribute="trailing" secondItem="YRD-iJ-fUB" secondAttribute="trailing" constant="20" id="MQ7-ec-ggw"/>
+                            <constraint firstItem="YRD-iJ-fUB" firstAttribute="leading" secondItem="clx-Ku-jrR" secondAttribute="leading" constant="20" id="OHE-bf-Jdn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newNameTextField" destination="ZmP-v8-K6O" id="Mgs-Qt-r1R"/>
+                        <outlet property="submitButton" destination="5kY-gC-R1o" id="UxQ-Ta-CFQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dA9-9e-G2b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="986" y="121"/>
         </scene>
     </scenes>
     <resources>
